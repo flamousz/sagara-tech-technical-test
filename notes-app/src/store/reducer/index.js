@@ -1,12 +1,10 @@
-import {combineReducers} from 'redux'
-import notesReducer from './noteReducer'
-import loadingReducer from './loadingReducer'
-
+import { combineReducers } from "redux";
+import notesReducer from "./noteReducer";
+import loadingReducer from "./loadingReducer";
 
 let rootReducers = combineReducers({
-    notesReducer,
-    loadingReducer 
-})
+	notesReducer,
+	loadingReducer,
+});
 
-
-export default rootReducers
+export default rootReducers;
