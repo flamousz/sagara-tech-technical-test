@@ -33,6 +33,7 @@ export function fetchNotes() {
 export function postNotes(input) {
 	return async (dispatch) => {
 		try {
+			console.log(input,'<< ini input di POST ACTION NOTE');
 			let notes = dataParser()
 			notes.push(input);
 			const totalNotesStringify = JSON.stringify(notes);
@@ -52,6 +53,7 @@ export function postNotes(input) {
 export function deleteNotes(id) {
 	return async (dispatch) => {
 		try {
+			console.log(id,'<< id di ACTION DELETE');
 			let notes = dataParser();
 			notes.splice(id, 1);
 			const totalNotesStringify = JSON.stringify(notes);
