@@ -1,12 +1,117 @@
-body {
+:root {
+	/* COLOR */
+	--BGCOLOR: #fbfbfd;
+	--BGCOLORRED: #bf307f;
+	--CONTRAS-COLOR: #7ffd0a;
+	--DEFAULT-FONT-COLOR: #232323;
+
+	/* BORDER */
+	--BORDER-DOTTED-BLUE: 2px dotted blue;
+	--BORDER-DOTTED-PURPLE: 2px dotted purple;
+	--BORDER-SOLID-WHITE: 2px solid #fff;
+}
+
+/* || RESET */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
 	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 0.5em;
+}
+
+body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
+	background: var(--BGCOLOR);
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+input,
+button,
+textarea {
+	font-size: inherit;
 }
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.container {
+	width: min(1300px, 90%);
+	border: var(--BORDER-DOTTED-BLUE);
+	margin: 0 auto;
+	min-height: 100vh;
+  }
+  
+
+.tasklist {
+	/* background: var(--CONTRAS-COLOR); */
+	display: flex;
+	flex-flow: column nowrap;
+	gap: .5em;
+	border: var(--BORDER-DOTTED-PURPLE);
+	height: 300px;
+	overflow: auto;
+}
+
+.tasklist > ul {
+	display: flex;
+	width: 100%;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	
+}
+
+.tasklist > ul > li {
+	background: var(--CONTRAS-COLOR);
+	list-style-type: none;
+	width: 50%;
+	/* height: 50%; */
+	padding: 0 .5em;
+}
+
+
+.tasklist > ul :first-child {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: .5em;
+}
+
+.tasklist > ul > :last-child {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+	border: var(--BORDER-DOTTED-BLUE);
+}
+
+
+/* ||INPUT */
+.checkbox-round {
+    width: 1em;
+    height: 1em;
+	background: none;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+	border: var(--BORDER-SOLID-WHITE);
+}
+
+.checkbox-round:hover {
+    background-color: gray;
+}
+

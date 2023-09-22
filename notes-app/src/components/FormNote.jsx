@@ -73,7 +73,7 @@ export default function FormNote() {
 			</form>
             <button type="button" onClick={
                 (e) => {
-                    dispatch(deleteNotes(2))
+                    dispatch(deleteNotes(1))
                         .then (data => {
                             toast.success('deleted')
                         })
