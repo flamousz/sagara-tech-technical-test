@@ -32,7 +32,9 @@ body {
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	background: var(--BGCOLOR);
+	background-image: url("../public/images/grain.jpg");
+	background-color: #232323;
+	background-size: cover;
 }
 
 input,
@@ -51,16 +53,19 @@ a {
 	border: var(--BORDER-DOTTED-BLUE);
 	margin: 0 auto;
 	min-height: 100vh;
-  }
-  
+}
+
+.container > header {
+	padding: .5em 0 0.5em 0;
+}
 
 .tasklist {
 	/* background: var(--CONTRAS-COLOR); */
 	display: flex;
 	flex-flow: column nowrap;
-	gap: .5em;
+	gap: 0.5em;
 	border: var(--BORDER-DOTTED-PURPLE);
-	height: 300px;
+	height: 40vh;
 	overflow: auto;
 }
 
@@ -69,23 +74,23 @@ a {
 	width: 100%;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	
 }
 
 .tasklist > ul > li {
-	background: var(--CONTRAS-COLOR);
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: saturate(180%) blur(10px);
 	list-style-type: none;
 	width: 50%;
 	/* height: 50%; */
-	padding: 0 .5em;
+	padding: 0 0.5em;
+	color: rgba(253, 253, 253, 0.849);
 }
-
 
 .tasklist > ul :first-child {
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-	gap: .5em;
+	gap: 0.5em;
 }
 
 .tasklist > ul > :last-child {
@@ -95,23 +100,49 @@ a {
 	border: var(--BORDER-DOTTED-BLUE);
 }
 
-
 /* ||INPUT */
 .checkbox-round {
-    width: 1em;
-    height: 1em;
+	width: 1em;
+	height: 1em;
 	background: none;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
 	border: var(--BORDER-SOLID-WHITE);
 }
 
 .checkbox-round:hover {
-    background-color: gray;
+	background-color: gray;
 }
 
+.plus-button {
+	background: none;
+	border: none;
+	font-size: 40px;
+	cursor: pointer;
+	font-weight: 400;
+	padding: 0 0.2em;
+	color: white;
+}
+
+.container > form {
+	border: var(--BORDER-DOTTED-PURPLE);
+	display: flex;
+	flex-direction: row;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: saturate(180%) blur(10px);
+}
+.container > form > input {
+	background: none;
+	border: none;
+	color: white;
+}
+
+.container > form > input::placeholder {
+	font-weight: 600;
+	color: white;
+}

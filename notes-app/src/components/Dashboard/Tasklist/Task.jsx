@@ -22,25 +22,31 @@ export default function Task({ note, index }) {
 	return (
 		<ul>
 			<li>
-				<button
-					type='button'
-					className='checkbox-round'
-					onClick={(e) => {
-						dispatch(
-							putNotes({
-								id: index,
-								name: note.name,
-								status: "completed",
-							})
-						)
-							.then((data) => {
-								toast.success("edited");
-							})
-							.catch((err) => {
-								toast.error(`${err.message}`);
-							});
-					}}
-				></button>
+				{note.status === "not completed" ? (
+					<>
+						<button
+							type='button'
+							className='checkbox-round'
+							onClick={(e) => {
+								dispatch(
+									putNotes({
+										id: note.id,
+										name: note.name,
+										status: "completed",
+									})
+								)
+									.then((data) => {
+										toast.success("edited");
+									})
+									.catch((err) => {
+										toast.error(`${err.message}`);
+									});
+							}}
+						></button>
+					</>
+				) : (
+					<></>
+				)}
 				<p>{note.name}</p>
 			</li>
 			<li>

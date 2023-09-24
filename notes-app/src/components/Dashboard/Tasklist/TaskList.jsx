@@ -24,13 +24,13 @@ export default function TaskList({ status }) {
 				{status === "completed" ? (
 					<>
 						{completedNotes.map((note, index) => {
-							return <Task key={index} note={note} index={index} />;
+							return <Task key={note.id} note={note} index={index} />;
 						})}
 					</>
 				) : (
 					<>
 						{notCompletedNotes.map((note, index) => {
-							return <Task key={index} note={note} index={index} />;
+							return <Task key={note.id} note={note} index={index} />;
 						})}
 					</>
 				)}

@@ -2,26 +2,18 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNotes, postNotes } from "../../store/action/actionNote";
 import { toast } from "react-toastify";
+import PlusButton from "../PlusButton";
 
 export default function TaskForm() {
 	const notes = useSelector((state) => state.notesReducer.notes);
 	const dispatch = useDispatch();
-    let id = 0
-	console.log(notes.length, "<<<notes.length DI TASKFORM");
-    if (notes.length === 0 ) {
-        id = 0
-    } else if (notes.length === 1) {
-        id = notes.length+1
-    } else {
-        id = notes.length+1
 
-    }
-    // let id = notes.length === 0 ? 0 : notes.length+1;
 	const initialValue = {
-		id,
 		name: "",
 		status: "not completed",
 	};
+
+	console.log(initialValue,'<< ini initial value');
 
 	const [inputForm, setInputForm] = useState(initialValue);
 
@@ -48,18 +40,18 @@ export default function TaskForm() {
 
 	useEffect(() => {
 		fetchNotes();
-		console.log(inputForm, "<< input form di formnote");
+		console.log(inputForm, "<< input form di TASKFORM");
 	}, [inputForm]);
 
 	return (
 		<>
 			<form onSubmit={submitHandler}>
-				<button type='submit'>click me</button>
-				<label htmlFor='name'>name:</label>
+				<PlusButton/>
 				<input
 					type='text'
 					name='name'
 					id='name'
+					placeholder="Insert the Task"
 					value={inputForm.name}
 					onChange={inputHandler}
 				/>
